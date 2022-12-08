@@ -8,7 +8,7 @@ module.exports = function (defaults) {
       includePaths: ['node_modules/bootstrap/scss'],
     },
   });
-  
+
   app.import('node_modules/bootstrap/dist/js/bootstrap.bundle.min.js');
 
   // Use `app.import` to add additional libraries to the generated
