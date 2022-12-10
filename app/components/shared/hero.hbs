@@ -1,0 +1,19 @@
+<div class="hero container my-5">
+    <div class="row p-4 pb-0 pe-lg-0 pt-lg-5 align-items-center rounded-3 border">
+        <div class="col-lg-7 p-3 p-lg-5 pt-lg-3">
+            <h1 class="hero-title display-4 fw-bold lh-1">{{@title}}</h1>
+            <p class="hero-text lead">{{@text}}</p>
+
+            <div class="hero-actions d-grid gap-2 d-md-flex justify-content-md-start mb-4 mb-lg-3">
+                <LinkTo @route="authors" class="btn btn-outline-primary btn-lg px-4 me-md-2 fw-bold">Explore authors</LinkTo>
+                <LinkTo @route="books" class="btn btn-outline-primary btn-lg px-4 me-md-2 fw-bold">Explore books</LinkTo>
+            </div>
+        </div>
+
+        <div class="col-lg-4 offset-lg-1 p-0 overflow-hidden shadow-lg">
+            <img class="rounded-lg-3"
+                src="https://minimalism.co/wp-content/uploads/2019/07/Must-read-minimalist-books-featured-image.jpg"
+                alt="" role="presentation" width="720">
+        </div>
+    </div>
+</div>

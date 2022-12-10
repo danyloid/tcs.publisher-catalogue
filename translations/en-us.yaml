@@ -1,0 +1,61 @@
+common:
+  title: Publisher Catalogue
+  edit: Edit
+  delete: Delete
+  cancel: Cancel
+  
+routes:
+  welcome: Welcome
+  signin: Sign In
+  authors: Authors
+  books: Books
+  notFound: 404 Not Found
+
+welcome: 
+  text: This is farily basic Ember application that should help you manage authors and books.
+
+notFound:
+  text: We were not able to find a resource matching your request. Let us help you get back on track - start by either exploring authors or books available in the catalogue.
+
+signin:
+  greeting: Good to see you again. Please sign in to get started.
+  usernameLabel: Username
+  usernamePlaceholder: Your email or username
+  usernameHelp: We'll never share your email with anyone else
+  passwordLabel: Password
+  actionLabel: 'Sign In'
+
+books:
+  title: Our Books
+  index:
+    search: Search books by title
+    searchNoMathces: No books found with title matching the <mark>{phrase}</mark> search phrase
+    empty: No books found.
+  editor: 
+    createTitle: Add Book
+
+authors:
+  title: Our Authors
+  about: About Author
+  index:
+    search: Search authors
+    searchNoMathces: No authors found with name matching the <mark>{phrase}</mark> search phrase
+    empty: No authors found. Let's start by creating one.
+  view:
+    viewAll: View all authors
+    booksBy: Books by {name}
+    bornOnIn: Born on {date} in {country}
+    noBooksInformation: We dont have any books by this author in the catalogue
+  editor: 
+    createTitle: Add Author
+    createAction: Add
+    editTitle: Update Author
+    editAction: Update author information
+    nameLabel: First Name
+    lastNameLabel: Last Name
+    birthdateLabel: Birthdate
+    countryLabel: Country
+    pictureLabel: Picture URL
+    aboutLabel: About author
+    aboutPlaceholder: Short summary providing information about author
+    validationError: Please make sure to fill out all the fields.

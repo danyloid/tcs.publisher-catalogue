@@ -1,0 +1,29 @@
+<div class="card book-card">
+  <div class="card-img-top">
+    <img src={{@book.cover}} class="card-img-top bd-placeholder-img" alt={{@book.title}}>
+  </div>
+
+  <div class="card-body">
+    <h5 class="card-title">{{@book.title}}</h5>
+
+    {{#if @showAuthorLink}}
+    <span class="card-text">
+      <span>by</span>
+
+      <LinkTo @route="authors.view" @model={{@book.author}} class="inline-author-link">
+        <img src={{@book.author.picture}} alt={{@book.author.fullName}}>
+        <span>{{@book.author.fullName}}</span>
+      </LinkTo>
+    </span>
+    {{/if}}
+
+    <p class="card-text">
+      <small class="text-muted">
+        <span>First published in</span>
+        <span>{{format-date-as-year @book.published}}</span>
+      </small>
+    </p>
+
+    <p class="card-text">{{@book.synopsis}}</p>
+  </div>
+</div>
