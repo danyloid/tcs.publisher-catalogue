@@ -1,0 +1,30 @@
+<Shared::Header @text={{t 'authors.title' }} />
+
+<div class="app-authors-index">
+  <div class="app-authors-index-toolbar row g-3 p-3 justify-content-between">
+    <div class="col-auto">
+      <Input id="app-authors-index-query" class="form-control me-2" @type="search" placeholder={{t 'authors.index.search' }} @value={{this.query}}></Input>
+    </div>
+    <div class="col-auto">
+      <LinkTo id="app-authors-index-create" @route="authors.new" class="btn btn-outline-primary">{{t 'authors.editor.createTitle'}}</LinkTo>
+    </div>
+  </div>
+
+  <Shared::GridFilter @entities={{@model}} @attr="fullName" @query={{this.query}} as |results|>
+    <Shared::SimpleWrapGrid class="authors-grid">
+      {{#each results as |author|}}
+      <div class="p-3">
+        <AuthorCard @author={{author}} />
+      </div>
+      {{else}}
+      <div class="p-3">
+        {{#if this.query}}
+        <p class="h5 no-query-matches">{{t 'authors.index.searchNoMathces' phrase=this.query htmlSafe=true}}</p>
+        {{else}}
+        <p class="h5 no-records">{{t 'authors.index.empty'}}</p>
+        {{/if}}
+      </div>
+      {{/each}}
+    </Shared::SimpleWrapGrid>
+  </Shared::GridFilter>
+</div>

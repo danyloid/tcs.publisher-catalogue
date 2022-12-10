@@ -1,0 +1,8 @@
+{{!-- eslint no-action: 0 --}}
+{{page-title "Edit"}}
+
+<Shared::Header @text={{if @model.id (t 'authors.editor.editTitle') (t 'authors.editor.createTitle') }} />
+
+<div class="p-3">
+    <AuthorEditor @author={{@model}} @onSubmit={{fn this.saveChanges @model}} />
+</div>

@@ -1,0 +1,10 @@
+<div data-author-id={{@author.id}} class="card author-card">
+    <img src={{@author.picture}} class="card-img-top" alt={{@author.fullName}}>
+
+    <div class="card-body">
+        <h5 class="card-title">{{@author.fullName}}</h5>
+        <p class="card-text text-truncate">{{@author.about}}</p>
+
+        <LinkTo @route="authors.view" @model={{@author}} class="author-details-link btn btn-outline-secondary">{{t 'authors.about'}}</LinkTo>
+    </div>
+</div>

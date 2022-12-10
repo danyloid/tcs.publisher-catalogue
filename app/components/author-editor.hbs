@@ -1,0 +1,50 @@
+<form id="author-editor-form" class="needs-validation" novalidate>
+    <div class="mb-3">
+        <label for="name" class="form-label">{{t "authors.editor.nameLabel"}}</label>
+        <Input id="name" @type="text" class="form-control" @value={{this.name}}
+            placeholder={{t "authors.editor.nameLabel" }} {{on 'change' this.setDirty once=true}} />
+    </div>
+
+    <div class="mb-3">
+        <label for="lastName" class="form-label">{{t "authors.editor.lastNameLabel"}}</label>
+        <Input id="lastName" @type="text" class="form-control" @value={{this.lastName}}
+            placeholder={{t "authors.editor.lastNameLabel" }} {{on 'change' this.setDirty once=true}} />
+    </div>
+
+    <div class="mb-3">
+        <label for="pictureUrl" class="form-label">{{t "authors.editor.pictureLabel"}}</label>
+        <Input id="pictureUrl" @type="url" class="form-control" @value={{this.picture}}
+            placeholder={{t "authors.editor.pictureLabel" }} />
+    </div>
+
+    <div class="mb-3">
+        <label for="birthdate" class="form-label">{{t "authors.editor.birthdateLabel"}}</label>
+        <Input id="birthdate" @type="date" max={{format-date-iso this.maxDate}} class="form-control"
+            @value={{this.birthdate}} placeholder={{t "authors.editor.birthdateLabel" }} />
+    </div>
+
+    <div class="mb-3">
+        <label for="country" class="form-label">{{t "authors.editor.countryLabel"}}</label>
+        <Input id="country" @type="text" class="form-control" @value={{this.country}}
+            placeholder={{t "authors.editor.countryLabel" }} {{on 'change' this.setDirty once=true}} />
+    </div>
+
+    <div class="mb-3">
+        <label for="about" class="form-label">{{t "authors.editor.aboutLabel"}}</label>
+        <Textarea id="about" class="form-control" @value={{this.about}}
+            placeholder={{t "authors.editor.aboutPlaceholder" }} />
+    </div>
+
+    <div class="mb-3">
+        <button id="save-changes" type="button" class="btn btn-outline-primary" disabled={{(not this.valid)}} {{on 'click' this.saveChanges}}>
+            {{if @author.id (t "authors.editor.editAction") (t "authors.editor.createAction")}}
+        </button>
+        <LinkTo id="cancel" @route="authors.index" class="btn btn-outline-secondary">{{t 'common.cancel'}}</LinkTo>
+    </div>
+
+    {{#if (and (not this.valid) (not this.pristine))}}
+    <div class="mb-3">
+        <div class="alert alert-warning" role="alert">{{t 'authors.editor.validationError'}}</div>
+    </div>
+    {{/if}}
+</form>

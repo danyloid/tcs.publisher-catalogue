@@ -1,0 +1,46 @@
+@import 'bootstrap';
+
+a.inline-author-link {
+    text-decoration: none;
+
+    img {
+        width: 1.5em;
+        height: 1.5em;
+        border-radius: 50%;
+    }
+}
+
+.author-card {
+    width: 18rem;
+
+    img.card-img-top {
+        height: 18rem;
+        background-color: $light;
+        min-height: 18rem;
+    }
+}
+
+.book-card {
+    width: 18rem;
+
+    div.card-img-top {
+        height: 18rem;
+        background-color: $light;
+
+        &>img {
+            transform: scale(.75);
+            position: relative;
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+    }
+
+    .card-body {
+        min-height: 260px;
+    }
+}
+
+.white-space-pre-line {
+    white-space: pre-line
+}

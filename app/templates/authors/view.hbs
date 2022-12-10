@@ -1,0 +1,46 @@
+{{page-title @model.fullName}}
+
+<div class="row g-3 p-3 justify-content-between">
+    <div class="col-auto">
+        <LinkTo @route="authors.index" class="btn btn-outline-secondary">{{t 'authors.view.viewAll'}}</LinkTo>
+    </div>
+    <div class="col-auto">
+        <LinkTo id="author-edit-link" @route="authors.edit" @model={{@model}} class="btn btn-outline-primary">{{t
+            'authors.editor.editAction'}}</LinkTo>
+        <button id="author-delete-btn" type="button" class="btn btn-outline-danger" {{on 'click' this.delete}}>{{t 'common.delete'}}</button>
+    </div>
+</div>
+
+<header class="p-3">
+    <h2>{{t 'authors.about'}}</h2>
+</header>
+
+<div class="container">
+    <div class="row align-items-start">
+        <div class="col-auto p-3">
+            <img src={{@model.picture}} class="card-img-top" alt={{@model.fullName}}>
+        </div>
+        <div class="col p-2">
+            <h2>{{@model.fullName}}</h2>
+            <p>
+                {{t 'authors.view.bornOnIn' date=(format-date-as-year @model.birthdate) country=@model.country}}
+            </p>
+            <p class="white-space-pre-line">{{@model.about}}</p>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col">
+            <h4>{{t 'authors.view.booksBy' name=@model.fullName}}</h4>
+            <Shared::SimpleWrapGrid>
+                {{#each @model.books as |b|}}
+                <div class="pb-3 pe-3">
+                    <BookCard @book={{b}} />
+                </div>
+                {{else}}
+                <small>{{t 'authors.view.noBooksInformation'}}</small>
+                {{/each}}
+            </Shared::SimpleWrapGrid>
+        </div>
+    </div>
+</div>
