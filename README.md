@@ -54,3 +54,5 @@ Make use of the many generators for code, try `ember help generate` for more det
   * [ember inspector for firefox](https://addons.mozilla.org/en-US/firefox/addon/ember-inspector/)
 * [Bootstrap](https://getbootstrap.com/) is used as the UI component library
 * [ember-cli-mirage](https://www.ember-cli-mirage.com/) is used to mock out the API for development & testing
+* [faker-js](https://fakerjs.dev/) is used help generate data for tests & development
+* [Ember Intl](https://ember-intl.github.io/ember-intl/) is used to get tempaltes localization-ready
