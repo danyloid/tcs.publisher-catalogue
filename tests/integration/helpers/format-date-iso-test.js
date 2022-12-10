@@ -7,10 +7,10 @@ module('Integration | Helper | format-date-iso', function (hooks) {
   setupRenderingTest(hooks);
 
   test('it formats string', async function (assert) {
-    this.set('inputValue', '10/03/1991');
+    this.set('inputValue', 'Sat, 10 Dec 1991 08:55:12 GMT');
 
     await render(hbs`{{format-date-iso this.inputValue}}`);
 
-    assert.dom(this.element).hasText('1991-10-02');
+    assert.dom(this.element).hasText('1991-12-10');
   });
 });
