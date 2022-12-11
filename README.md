@@ -2,8 +2,7 @@
 
 This README outlines the details of collaborating on this Ember application.
 
-This is a showcase application demonstrating simple book catalogue management tool built with Ember.js
-* 
+This is a showcase application demonstrating simple authors/books management app built with Ember.js
 
 ## Prerequisites
 
@@ -13,6 +12,16 @@ You will need the following things properly installed on your computer.
 * [Node.js](https://nodejs.org/) (with npm)
 * [Ember CLI](https://cli.emberjs.com/release/)
 * [Google Chrome](https://google.com/chrome/) or [Mozilla Firefox](https://www.mozilla.org/en-US/firefox/) if you'd like to leverage Ember Inspector to simplify development
+
+## Versions & Branching
+
+* Workflow [gitflow](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow) 
+* Default branch: `develop`
+* Stable branch: `main`
+
+### Timeboxed implementation
+The first timeboxed implementation of the app can be found here: https://github.com/danyloid/tcs.publisher-catalogue/releases/tag/v0.9.0
+
 
 ## Installation
 
