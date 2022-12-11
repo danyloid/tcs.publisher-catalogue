@@ -9,7 +9,7 @@ export default Factory.extend({
     return faker.music.songName();
   },
   cover() {
-    return faker.image.abstract(200, 320);
+    return `${faker.image.abstract(200, 320)}?q=${faker.random.numeric(6)}`;
   },
   published() {
     return faker.date.birthdate();
